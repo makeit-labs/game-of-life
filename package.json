@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/makeit-labs/game-of-life/issues"
   },
-  "homepage": "https://github.com/makeit-labs/game-of-life#readme"
+  "homepage": "https://github.com/makeit-labs/game-of-life#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1"
+  }
 }
