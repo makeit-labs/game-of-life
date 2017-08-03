@@ -1,0 +1,19 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "description": "How my life will play out in the visible universe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makeit-labs/game-of-life.git"
+  },
+  "author": "Shanfan Huang and friends",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makeit-labs/game-of-life/issues"
+  },
+  "homepage": "https://github.com/makeit-labs/game-of-life#readme"
+}
