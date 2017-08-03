@@ -11,55 +11,49 @@ MyLife.prototype.toBeOrNotToBe = function(myNeighbors) {
   } else {
     this.isAlive = false;
   }
-
-  return this.isAlive;
 };
 
 describe("My life", () => {
   let myLife = new MyLife();
-  let myNeighbors = [];
+  let myNeighbors;
 
   it("dies in solitude", () => {
-    myNeighbors = [false, false, false, false,
-                  false, false, false, false];
-    expect(myLife.toBeOrNotToBe(myNeighbors)).toEqual(false);
+    myNeighbors = [];
+    myLife.toBeOrNotToBe(myNeighbors);
+    expect(myLife.isAlive).toEqual(false);
   });
 
   it("dies in a conflict", () => {
-    myNeighbors = [true, false, false, false,
-                  false, false, false, false];
-    expect(myLife.toBeOrNotToBe(myNeighbors)).toEqual(false);
+    myNeighbors = [true];
+    myLife.toBeOrNotToBe(myNeighbors);
+    expect(myLife.isAlive).toEqual(false);
   });
 
   it("lives a balanced life with 2 friends", () => {
-    myNeighbors = [true, true, false, false,
-                  false, false, false, false];
-    expect(myLife.toBeOrNotToBe(myNeighbors)).toEqual(true);
+    myNeighbors = [true, true];
+    myLife.toBeOrNotToBe(myNeighbors);
+    expect(myLife.isAlive).toEqual(true);
   });
 
   it("lives a happy life in a 3-person family", () => {
-    myNeighbors = [true, true, true, false,
-                  false, false, false, false];
-    expect(myLife.toBeOrNotToBe(myNeighbors)).toEqual(true);
+    myNeighbors = [true, true, true];
+    myLife.toBeOrNotToBe(myNeighbors);
+    expect(myLife.isAlive).toEqual(true);
   });
 
   it("dies of scarce resource", () => {
-    myNeighbors = [true, true, true, true,
-                  false, false, false, false];
-    expect(myLife.toBeOrNotToBe(myNeighbors)).toEqual(false);
+    myNeighbors = [true, true, true, true];
+    myLife.toBeOrNotToBe(myNeighbors);
+    expect(myLife.isAlive).toEqual(false);
 
     myNeighbors = [true, true, true, true,
                   true, true, true, true];
-    expect(myLife.toBeOrNotToBe(myNeighbors)).toEqual(false);
-  });
-
-  it("is a void", () => {
+    myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(false);
   });
 
   it("is born", () => {
-    myNeighbors = [true, true, true, false,
-                  false, false, false, false];
+    myNeighbors = [true, true, true];
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(true);
   });
