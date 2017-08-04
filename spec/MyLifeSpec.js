@@ -5,42 +5,41 @@ describe("My life", () => {
   let myNeighbors;
 
   it("dies in solitude", () => {
-    myNeighbors = [];
+    myNeighbors = 0;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(false);
   });
 
   it("dies in a conflict", () => {
-    myNeighbors = [true];
+    myNeighbors = 1;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(false);
   });
 
   it("lives a balanced life with 2 friends", () => {
-    myNeighbors = [true, true];
+    myNeighbors = 2;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(true);
   });
 
   it("lives a happy life in a 3-person family", () => {
-    myNeighbors = [true, true, true];
+    myNeighbors = 3;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(true);
   });
 
   it("dies of scarce resource", () => {
-    myNeighbors = [true, true, true, true];
+    myNeighbors = 4;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(false);
 
-    myNeighbors = [true, true, true, true,
-                  true, true, true, true];
+    myNeighbors = 8;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(false);
   });
 
   it("is born", () => {
-    myNeighbors = [true, true, true];
+    myNeighbors = 3;
     myLife.toBeOrNotToBe(myNeighbors);
     expect(myLife.isAlive).toEqual(true);
   });
