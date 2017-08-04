@@ -1,9 +1,8 @@
 const MyLife = require("../src/MyLife");
+let myLife = new MyLife();
+let myNeighbors;
 
 describe("My life", () => {
-  let myLife = new MyLife();
-  let myNeighbors;
-
   it("dies in solitude", () => {
     myNeighbors = 0;
     myLife.toBeOrNotToBe(myNeighbors);
