@@ -1,7 +1,7 @@
 const Land = require("../src/Land");
-const MyLife = require("../src/MyLife");
+const Life = require("../src/Life");
 let theLand = new Land();
-let life = new MyLife();
+let life = new Life();
 
 describe("The land", () => {
   it("has a horizontal limit", () => {
@@ -27,22 +27,5 @@ describe("The land", () => {
       [life, life,life, life],
       [life, life,life, life]
     ]);
-  });
-});
-
-describe("The game of life", () => {
-  it("knows each life and their surroundings on a given land", () => {
-    theLand.genesis(3,3);
-    expect(theLand.lifeEvidence[0][0].countNeighbors()).toEqual(3);
-    expect(theLand.lifeEvidence[0][1].countNeighbors()).toEqual(5);
-    expect(theLand.lifeEvidence[0][2].countNeighbors()).toEqual(3);
-
-    expect(theLand.lifeEvidence[1][0].countNeighbors()).toEqual(5);
-    expect(theLand.lifeEvidence[1][1].countNeighbors()).toEqual(8);
-    expect(theLand.lifeEvidence[1][1].countNeighbors()).toEqual(5);
-
-    expect(theLand.lifeEvidence[2][0].countNeighbors()).toEqual(3);
-    expect(theLand.lifeEvidence[2][1].countNeighbors()).toEqual(5);
-    expect(theLand.lifeEvidence[2][2].countNeighbors()).toEqual(3);
   });
 });
